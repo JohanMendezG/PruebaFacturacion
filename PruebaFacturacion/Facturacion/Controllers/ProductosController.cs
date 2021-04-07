@@ -41,9 +41,29 @@ namespace Facturacion.Controllers
         public async Task<ActionResult> Post([FromBody] Producto producto)
         {
             ProductosDA productoDA = new ProductosDA(Context);
-            if (await productoDA.AddProductoAsync(producto).ConfigureAwait(false))
+            if (await productoDA.AddProductoAsync(producto: producto).ConfigureAwait(false))
                 return new CreatedAtRouteResult("GetProducto", new { id = producto.Id }, producto);
             return BadRequest();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutAsync(int id, [FromBody] Producto producto)
+        {
+            if (id != producto.Id)
+                return BadRequest();
+            ProductosDA productoDA = new ProductosDA(Context);
+            if (await productoDA.UpdateProductAsync(producto: producto).ConfigureAwait(false))
+                return Ok();
+            return BadRequest();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteAsync(int id)
+        {
+            ProductosDA productoDA = new ProductosDA(Context);
+            if (await productoDA.DeleteProductoAsync(id: id).ConfigureAwait(false))
+                return Ok();
+            return NotFound();
         }
     }
 }
