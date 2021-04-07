@@ -8,7 +8,7 @@ namespace Facturacion.Controllers
 {
     [Route("api/[controller")]
     [ApiController]
-    public class FacturaController:ControllerBase
+    public class FacturasController:ControllerBase
     {
     }
 }

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facturacion", "Facturacion\Facturacion.csproj", "{6B3CBE9D-7186-4F6A-823C-7F4E0926F1F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facturacion", "Facturacion\Facturacion.csproj", "{6B3CBE9D-7186-4F6A-823C-7F4E0926F1F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionEntidades", "..\..\..\PruebaFacturacion\FacturacionEntidades\FacturacionEntidades.csproj", "{785EF341-4B21-41AB-A4A2-746E5634BE38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionDatos", "..\..\..\PruebaFacturacion\FacturacionDatos\FacturacionDatos.csproj", "{B7B0720D-DECF-42C6-8FED-B7FFE46B0E61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{785EF341-4B21-41AB-A4A2-746E5634BE38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{785EF341-4B21-41AB-A4A2-746E5634BE38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{785EF341-4B21-41AB-A4A2-746E5634BE38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7B0720D-DECF-42C6-8FED-B7FFE46B0E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B0720D-DECF-42C6-8FED-B7FFE46B0E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B0720D-DECF-42C6-8FED-B7FFE46B0E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B0720D-DECF-42C6-8FED-B7FFE46B0E61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\PruebaFacturacion\FacturacionDatos\FacturacionDatos.csproj" />
     <ProjectReference Include="..\..\..\..\PruebaFacturacion\FacturacionEntidades\FacturacionEntidades.csproj" />
   </ItemGroup>
 
