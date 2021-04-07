@@ -11,7 +11,7 @@ namespace Facturacion.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FacturasController:ControllerBase
+    public class FacturasController : ControllerBase
     {
         public FacturasController(ApplicationDbContext context)
         {
@@ -27,7 +27,7 @@ namespace Facturacion.Controllers
             return await facturasDA.GetFacturasAsync().ConfigureAwait(false);
         }
 
-        [HttpGet("{id}", Name ="GetFactura")]
+        [HttpGet("{id}", Name = "GetFactura")]
         public async Task<ActionResult<Factura>> GetAsync(string id)
         {
             FacturasDA facturasDA = new FacturasDA(Context);
@@ -42,8 +42,28 @@ namespace Facturacion.Controllers
         {
             FacturasDA facturasDA = new FacturasDA(Context);
             if (await facturasDA.AddFacturaAsync(factura).ConfigureAwait(false))
-                return new CreatedAtRouteResult("GetFactura", new { id = factura.Id}, factura);
+                return new CreatedAtRouteResult("GetFactura", new { id = factura.Id }, factura);
             return BadRequest();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutAsync(string id, [FromBody] Factura factura)
+        {
+            if (id != factura.Id)
+                return BadRequest();
+            FacturasDA facturasDA = new FacturasDA(Context);
+            if (await facturasDA.UpdateFacturaAsync(factura: factura).ConfigureAwait(false))
+                return Ok();
+            return BadRequest();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteAsync(string id)
+        {
+            FacturasDA facturasDA = new FacturasDA(Context);
+            if (await facturasDA.DeleteFacturaAsync(id: id).ConfigureAwait(false))
+                return Ok();
+            return NotFound();
         }
     }
 }
